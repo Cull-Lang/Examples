@@ -1,0 +1,11 @@
+module main
+
+type MyStruct = struct {
+	foo: i32
+}
+
+fun main() {
+	// the :new static method is automatically created by the compiler.
+	myStruct := MyStruct:new(foo: 123)
+	println(myStruct) // MyStruct{foo: 123}
+}
