@@ -1,0 +1,14 @@
+module main
+
+CONSTANT := 123
+
+type MyStruct = struct {
+	foo: i32
+}
+
+MyStruct:CONSTANT := 321
+
+fun main() {
+	println(CONSTANT) // 123
+	println(MyStruct:CONSTANT) // 321
+}
