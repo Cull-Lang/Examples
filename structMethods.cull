@@ -1,0 +1,23 @@
+module main
+
+type MyStruct = struct {
+	foo: i32
+}
+
+// Static method.
+fun MyStruct:foo(): i32 {
+	return 123
+}
+
+// Normal method.
+fun MyStruct.foo(): i32 {
+	// The struct is accessed by the `this` keyword.
+	return this.foo
+}
+
+fun main() {
+	println(MyStruct:foo()) // 123
+	
+	instance := MyStruct:new(foo: 321)
+	println(instance.foo()) // 321
+}
