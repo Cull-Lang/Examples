@@ -12,7 +12,7 @@ fun MyStruct::myStaticFunc() {
 }
 
 fun MyStruct.myMethod() {
-	println("Method called.")
+	println("Method called. MyStruct.foo: ${this.foo}")
 }
 
 main {
@@ -22,7 +22,7 @@ main {
 	// It can however be overriden.
 	mystruct := MyStruct::new(foo: 123)
 
-	mystruct.myMethod() // Method called.
+	mystruct.myMethod() // Method called. MyStruct.foo: 123
 
 	println(mystruct.bar) // 49
 }
