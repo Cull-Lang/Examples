@@ -1,0 +1,7 @@
+module main
+
+// This is the entrypoint of our program.
+main {
+	// The preffered style for strings is ". 
+	println("Hello, World!") // There are also no semi-colons (;).
+}

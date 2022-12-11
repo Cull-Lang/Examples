@@ -1,0 +1,28 @@
+module main
+
+// Type names must use PascalCase.
+MyStruct := struct {
+	foo: i32 // `foo` is a field that carries the type `i32`
+	bar: i64 = 49 // `bar` has a default of 49.
+}
+
+// Static functions cannot be called on instances.
+fun MyStruct::myStaticFunc() {
+	println("Static function called.")
+}
+
+fun MyStruct.myMethod() {
+	println("Method called.")
+}
+
+main {
+	MyStruct::myStaticFunc() // Static function called.
+
+	// The static `::new` function on `MyStruct` is compiler generated.
+	// It can however be overriden.
+	mystruct := MyStruct::new(foo: 123)
+
+	mystruct.myMethod() // Method called.
+
+	println(mystruct.bar) // 49
+}

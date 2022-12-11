@@ -1,0 +1,38 @@
+module main
+
+fun add(a: i32, b: i32): i32 {
+	return a + b
+}
+
+// Parameters can also have defaults.
+// Here, add will be 1 if not given.
+fun incerement(a: i32, add: i32 = 1): i32 {
+	return a + b
+}
+
+// Functions can also have keyword parameters.
+fun pow(a: i32, keyword of: i32): i32 {
+	return a**b
+}
+
+// Generic functions!
+// `u64 | i64 | u32 | i32` is a sumtype.
+fun genericAdd<T: u64 | i64 | u32 | i32>(a: T, b: T): T {
+	return a + b
+}
+
+// The function return is annotated as death if the
+// function halts the program or runs forever.
+fun die(): death {
+	exit(1)
+}
+
+main {
+	println(add(1, 2)) // 3
+
+	println(incerement(2)) // 3
+
+	println(pow(2, of: 3)) // 8
+
+	die() // Exits with exit code 1.
+}
