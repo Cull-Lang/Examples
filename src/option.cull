@@ -20,7 +20,6 @@ fun Option<T>.unwrap(): T {
 	}
 }
 
-
 fun maybe(a: i32): Option<i32> {
 	return Some::new(a) // Some<i32> is cast to Option<T>
 }
